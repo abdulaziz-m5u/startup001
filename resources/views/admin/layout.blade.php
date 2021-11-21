@@ -83,6 +83,7 @@
     </div>
 
     @include('partials.admin.script')
+    @stack('script-alt')
 
 </body>
 

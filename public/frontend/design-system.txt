@@ -1,0 +1,7 @@
+color: 
+#1abc9c
+#337ab7
+#673ab7
+
+color-logo:
+#00BCD4

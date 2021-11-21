@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">description</label>
-                        <textarea name="description" id="description" rows="5" class="d-block w-100 form-control">{{ $travelPackage->description }}</textarea>
+                        <textarea name="description" id="description" class="form-control">{{ $travelPackage->description }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
@@ -125,3 +125,14 @@
 
 </div>
 @endsection
+
+@push('script-alt')
+<script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#description' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+@endpush

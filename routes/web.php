@@ -20,12 +20,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');
+Route::get('blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
+Route::get('paket-travel', [App\Http\Controllers\PageController::class, 'package'])->name('package');
+Route::get('detail/{travelPackage:slug}', [App\Http\Controllers\PageController::class, 'detail'])->name('detail');
 
 Route::group(['middleware' => 'auth'], function() {
+
     Route::group(['middleware' => 'isAdmin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
         Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
         Route::resource('travel-packages', \App\Http\Controllers\Admin\TravelPackageController::class);
         Route::resource('travel-packages.galleries', \App\Http\Controllers\Admin\GalleryController::class);
     });
+    
 });

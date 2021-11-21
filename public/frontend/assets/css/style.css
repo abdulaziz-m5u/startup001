@@ -1,0 +1,417 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    --main-color: #1abc9c;
+    --text-color: #42414e;
+    --text-color-alt: #757575;
+    --body-color: #f9fbfd;
+    --container-color: #fff;
+
+    /*========== Font and typography ==========*/
+    --body-font: "Open Sans", sans-serif;
+    --h1-font-size: 1.5rem;
+    --normal-font-size: 0.938rem;
+    --tiny-font-size: 0.625rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --h1-font-size: 2.8rem;
+        --normal-font-size: 1rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== utitlity ===============*/
+.title {
+    color: var(--text-color);
+}
+
+.title-alt {
+    color: var(--text-color-alt);
+}
+
+.main-color {
+    color: var(--main-color);
+}
+section {
+    margin-bottom: 120px;
+}
+
+.section-title {
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+    text-align: center;
+    margin-bottom: -5px;
+}
+
+.btn-hero {
+    background-color: #673ab7;
+}
+
+.btn-hero {
+    background-color: transparent;
+    border: 3px solid #fff;
+    color: #fff;
+    padding: 0.6rem 2rem;
+    border-radius: 0;
+    font-size: 1.6rem;
+}
+
+hr {
+    display: inline-block;
+    height: 3px !important;
+    background-color: var(--main-color);
+    color: var(--main-color);
+    opacity: 1;
+}
+
+.hero-content a.btn-hero:hover {
+    background-color: var(--main-color);
+    border: 3px solid var(--main-color);
+    color: #fff;
+}
+
+/*=============== HEADER ===============*/
+.header {
+    width: 100%;
+    background-color: var(--container-color);
+    transition: 2s;
+}
+
+/*=============== NAV ===============*/
+.nav {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__img {
+    width: 32px;
+    border-radius: 50%;
+}
+
+.nav__logo {
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+@media screen and (max-width: 767px) {
+    .nav__menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: var(--container-color);
+        box-shadow: 0 -1px 12px rgba(99, 223, 216, 0.15);
+        width: 100%;
+        height: 4rem;
+        padding: 0 1rem;
+        display: grid;
+        align-content: center;
+        border-radius: 1.25rem 1.25rem 0 0;
+        transition: 0.4s;
+        z-index: 3;
+    }
+}
+
+.nav__list,
+.nav__link {
+    display: flex;
+    padding: 0;
+}
+
+.nav__link {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4px;
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+.nav__list {
+    justify-content: space-around;
+}
+
+.nav__name {
+    font-size: var(--tiny-font-size);
+    /* display: none;*/ /* Minimalist design, hidden labels */
+}
+
+.nav__icon {
+    font-size: 1.5rem;
+}
+
+/*Active link*/
+.active-link {
+    position: relative;
+    color: var(--main-color);
+    transition: 0.3s;
+}
+
+/* Minimalist design, active link */
+/* .active-link::before{
+  content: '';
+  position: absolute;
+  bottom: -.5rem;
+  width: 4px;
+  height: 4px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+} */
+
+@keyframes test {
+    0% {
+        top: -1000px;
+    }
+    50% {
+        top: 0;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+/* Change background header */
+.scroll-header {
+    box-shadow: 0 1px 12px rgba(94, 223, 212, 0.15);
+    animation: test 2s;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+}
+
+/* hero style */
+.hero {
+    position: relative;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.hero .hero-content {
+    z-index: 2;
+    position: relative;
+}
+
+/* why-us style */
+.why-us .card {
+    border: none;
+    border-radius: 0 !important;
+    background-color: var(--container-color);
+}
+
+.why-us .card:hover {
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.why-us-icon {
+    font-size: 4rem;
+    color: var(--main-color);
+}
+
+.why-us p {
+    color: var(--text-color-alt);
+}
+
+/* package travel */
+
+.package-card {
+    border: none;
+}
+
+.package-card .package-wrapper-img {
+    border-radius: 0.5rem;
+}
+
+.package-card .package-wrapper-img img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.package-card .package-wrapper-img img:hover {
+    transform: scale(1.1);
+}
+
+.package-card h5 {
+    bottom: -80px;
+    left: 0;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.package-card .package-price span {
+    bottom: -20px;
+    border-radius: 2rem;
+}
+
+span.package-btn {
+    transition: 0.5s;
+}
+
+.package-link:hover span.package-btn {
+    bottom: 10px;
+    background-color: var(--main-color);
+    color: #fff !important;
+    border: none;
+}
+
+/* style blog */
+.blog .card {
+    border: none;
+    box-shadow: 0 0 22px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* style footer */
+footer .list-group-item a:hover {
+    color: var(--main-color);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+/* Remove if you choose, the minimalist design */
+@media screen and (max-width: 320px) {
+    .nav__name {
+        display: none;
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+    .nav__list {
+        justify-content: center;
+        column-gap: 3rem;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    body {
+        margin: 0;
+    }
+    .section {
+        padding: 7rem 0 2rem;
+    }
+    .nav {
+        height: calc(var(--header-height) + 1.5rem); /* 4.5rem */
+        justify-content: space-between;
+    }
+    .nav__img {
+        display: none;
+    }
+    .nav__icon {
+        display: none;
+    }
+    .nav__name {
+        font-size: var(--normal-font-size);
+        /* display: block; */ /* Minimalist design, visible labels */
+    }
+    .nav__link:hover {
+        color: var(--main-color);
+    }
+
+    /* First design, remove if you choose the minimalist design */
+    .active-link::before {
+        content: "";
+        position: absolute;
+        bottom: -0.75rem;
+        width: 50%;
+        height: 3px;
+        background-color: var(--main-color);
+    }
+
+    /* Minimalist design */
+    /* .active-link::before{
+      bottom: -.75rem;
+  } */
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .detail-container {
+        width: 717px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* detail style */
+.breadcrumb-item a:hover {
+    color: var(--text-color-alt);
+}
+
+.detail-card {
+    position: relative;
+    width: 240px;
+    overflow: hidden;
+}
+
+.detail-img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.btn-book {
+    background-color: var(--main-color);
+    color: #fff;
+    box-shadow: 0 1rem 4rem rgba(26, 188, 156, 0.218);
+}
+
+.btn-book:hover {
+    color: #fff;
+}

@@ -39,7 +39,8 @@ class TravelPackageController extends Controller
 
     public function update(StoreTravelPackageRequest $request, TravelPackage $travelPackage): RedirectResponse
     {
-        $travelPackage->update($request->validated());
+        $slug = Str::slug($request->name);
+        $travelPackage->update($request->validated() + ["slug" => $slug]);
 
         return redirect()->route('admin.travel-packages.index')->with('message', 'Updated Successfully !');;
     }
