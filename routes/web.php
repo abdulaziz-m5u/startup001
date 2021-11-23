@@ -21,14 +21,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');
-Route::get('blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
+Route::get('posts', [App\Http\Controllers\PageController::class, 'posts'])->name('posts');
+Route::get('posts/{post:slug}', [App\Http\Controllers\PageController::class, 'detailPost'])->name('posts.show');
 Route::get('paket-travel', [App\Http\Controllers\PageController::class, 'package'])->name('package');
 Route::get('detail/{travelPackage:slug}', [App\Http\Controllers\PageController::class, 'detail'])->name('detail');
+
+
+Route::get('kontak-kami', [App\Http\Controllers\PageController::class, 'contact'])->name('contact');
+Route::post('kontak-kami', [App\Http\Controllers\PageController::class, 'getEmail'])->name('contact.email');
 
 Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['middleware' => 'isAdmin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
         Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
         Route::resource('travel-packages', \App\Http\Controllers\Admin\TravelPackageController::class);
         Route::resource('travel-packages.galleries', \App\Http\Controllers\Admin\GalleryController::class);
     });

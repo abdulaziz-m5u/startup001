@@ -415,3 +415,14 @@ footer .list-group-item a:hover {
 .btn-book:hover {
     color: #fff;
 }
+
+/* style contact */
+
+.btn-contact{
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.btn-contact:hover{
+    color: #fff;
+}

@@ -2,12 +2,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 text-center text-sm-start mb-3">
-            <img
-              width="250"
-              style="height: 80px; object-fit: cover"
-              src="{{ asset('frontend/assets/images/logo-go-lombok____.png') }}"
-              alt=""
-            />
+            <a href="{{ route('home') }}">
+              <img
+                width="250"
+                style="height: 80px; object-fit: cover"
+                src="{{ asset('frontend/assets/images/logo-go-lombok____.png') }}"
+                alt=""
+              />
+            </a>
             <p class="title-alt mt-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Exercitationem, aut.

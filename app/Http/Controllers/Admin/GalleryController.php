@@ -31,7 +31,7 @@ class GalleryController extends Controller
 
     public function update(StoreGalleryRequest $request, TravelPackage $travelPackage, Gallery $gallery): RedirectResponse
     {
-        if($gallery->path){
+        if($request->path){
             File::delete('storage/' . $gallery->path);
         }
 

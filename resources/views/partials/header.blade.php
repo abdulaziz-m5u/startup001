@@ -1,6 +1,6 @@
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="#" class="nav__logo"
+        <a href="{{ route('home') }}" class="nav__logo"
           ><img
             width="250"
             style="height: 70px; object-fit: cover"
@@ -25,7 +25,7 @@
             </li> -->
 
             <li class="nav__item">
-              <a href="{{ route('blog') }}" class="nav__link {{ request()->is('blog') ? ' active-link' : '' }}"">
+              <a href="{{ route('posts') }}" class="nav__link {{ request()->is('posts') ? ' active-link' : '' }}"">
                 <i class="bx bx-book-alt nav__icon"></i>
                 <span class="nav__name">Blog</span>
               </a>
@@ -39,7 +39,7 @@
             </li>
 
             <li class="nav__item">
-              <a href="#contactme" class="nav__link {{ request()->is('contact') ? ' active-link' : '' }}"">
+              <a href="{{ route('contact') }}" class="nav__link {{ request()->is('contact') ? ' active-link' : '' }}"">
                 <i class="bx bx-message-square-detail nav__icon"></i>
                 <span class="nav__name">Kontak Kami</span>
               </a>

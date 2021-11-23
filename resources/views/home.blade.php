@@ -85,7 +85,7 @@
                 </div>
                 <div class="package-price d-flex justify-content-center">
                   <span class="btn btn-light position-absolute package-btn">
-                    ${{ $travelPackage->price }}
+                    IDR.{{ number_format($travelPackage->price) }}
                   </span>
                 </div>
                 <h5 class="btn position-absolute w-100">
@@ -121,48 +121,27 @@
         <hr width="40" class="text-center" />
 
         <div class="row mt-5">
+        @foreach($posts as $post)
           <div class="col-lg-6 mb-4">
-            <a href="">
+            <a href="{{ route('posts.show', $post)  }}">
               <div class="card text-center p-4">
-                <h4 class="title mb-2">Cara gratis travel ke lombok</h4>
+                <h4 class="title mb-2">{{ $post->title }}</h4>
                 <span class="main-color"
-                  >User Post <span href="#">12 Juni 1999</span></span
+                  >User Post <span href="#">{{ $post->created_at }}</span></span
                 >
                 <div class="card-body p-4">
                   <img
-                    src="https://media.istockphoto.com/photos/travelling-tools-picture-id489556478?b=1&k=20&m=489556478&s=170667a&w=0&h=Lk8r0IMv8D6oXSjierkw8hMOUNWaucX4XNgtTOr33nk="
+                    src="{{ Storage::url($post->image) }}"
                     alt=""
                   />
                   <p class="title-alt mt-5">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id
-                    cupiditate excepturi enim provident impedit rerum, commodi
-                    voluptatibus iusto distinctio natus.
+                    {{ $post->excerpt }}
                   </p>
                 </div>
               </div>
             </a>
           </div>
-          <div class="col-lg-6 mb-4">
-            <a href="">
-              <div class="card text-center p-4">
-                <h4 class="title mb-2">Cara gratis travel ke lombok</h4>
-                <span class="main-color"
-                  >User Post <span href="#">12 Juni 1999</span></span
-                >
-                <div class="card-body p-4">
-                  <img
-                    src="https://media.istockphoto.com/photos/travelling-tools-picture-id489556478?b=1&k=20&m=489556478&s=170667a&w=0&h=Lk8r0IMv8D6oXSjierkw8hMOUNWaucX4XNgtTOr33nk="
-                    alt=""
-                  />
-                  <p class="title-alt mt-5">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id
-                    cupiditate excepturi enim provident impedit rerum, commodi
-                    voluptatibus iusto distinctio natus.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
+        @endforeach
         </div>
       </section>
     </main>

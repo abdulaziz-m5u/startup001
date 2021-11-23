@@ -15,8 +15,8 @@
         </div>
 
         <div class="col-12 col-md text-center">
-          <h1 class="main-color">Lombok Tour</h1>
-          <span class="title-alt">Lombok, Indonesia</span>
+          <h1 class="main-color">{{ $travelPackage->name }}</h1>
+          <span class="title-alt">{{ $travelPackage->location }}</span>
         </div>
       </section>
 
@@ -62,7 +62,7 @@
               >
                 Harga :
                 <span class="text-gray-500 font-weight-light"
-                  >IDR.{{ $travelPackage->price }}</span
+                  >IDR.{{ number_format($travelPackage->price) }}</span
                 >
               </div>
               <h5 class="">Kirim Pembayaran</h5>
