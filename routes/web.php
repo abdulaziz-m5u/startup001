@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'isAdmin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
         Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
         Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
+        Route::resource('cars', \App\Http\Controllers\Admin\CarController::class);
+        Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
         Route::resource('travel-packages', \App\Http\Controllers\Admin\TravelPackageController::class);
         Route::resource('travel-packages.galleries', \App\Http\Controllers\Admin\GalleryController::class);
     });

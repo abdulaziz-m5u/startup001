@@ -418,11 +418,47 @@ footer .list-group-item a:hover {
 
 /* style contact */
 
-.btn-contact{
+.btn-contact {
     background-color: var(--main-color);
     color: #fff;
 }
 
-.btn-contact:hover{
+.btn-contact:hover {
     color: #fff;
+}
+
+/* new style */
+.blogpost .card-post .card-post-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.blogpost .card-post .card-post-data {
+    text-align: left;
+}
+
+.blogpost .card-post .card-post-data span {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+.blogpost .card-post .card-post-data small {
+    font-weight: 300;
+    color: #959595;
+}
+.blogpost .card-post .card-post-data h5 {
+    font-weight: 500;
+    margin-top: 0.7rem;
+    color: var(--text-color);
+}
+
+.blog .post-detail {
+    border-radius: 0.7rem;
+}
+
+.blog .post-detail img {
+    border-radius: 2rem;
+    padding: 1rem;
 }

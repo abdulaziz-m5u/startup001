@@ -8,15 +8,16 @@ use App\Models\TravelPackage;
 use App\Mail\StoreContactMail;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreEmailRequest;
+use App\Models\Category;
 
 class PageController extends Controller
 {
     public function home() : View
     {
-        $travelPackages = TravelPackage::with('galleries')->get();
+        $categories = Category::with('travel_packages')->get();
         $posts = Post::get();
 
-        return view('home', compact('travelPackages','posts'));
+        return view('home', compact('categories','posts'));
     }
 
     public function detail(TravelPackage $travelPackage): View

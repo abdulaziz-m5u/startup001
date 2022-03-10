@@ -14,4 +14,8 @@ class TravelPackage extends Model
     public function galleries(){
         return $this->hasMany(Gallery::class);
     }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

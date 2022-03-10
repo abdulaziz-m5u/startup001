@@ -16,9 +16,21 @@
     </li>
 
     <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin.categories.index') }}">
+            <i class="fas fa-list-alt"></i>
+            <span>Category</span></a>
+    </li>
+
+    <li class="nav-item ">
         <a class="nav-link" href="{{ route('admin.travel-packages.index') }}">
             <i class="fas fa-fw fa-hotel"></i>
             <span>Travel Package</span></a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin.cars.index') }}">
+            <i class="fas fa-fw fa-car"></i>
+            <span>Car</span></a>
     </li>
 
     <li class="nav-item ">

@@ -40,7 +40,7 @@
 
         <div class="row" style="margin-top: 120px">
           <div class="col-12 col-md-12 col-lg-7 mb-5">
-            <div class="card border-0">
+            <div class="card border-0 p-2">
               <h3 class="fw-bolder title mb-4">Tentang Paket Wisata</h3>
               {!! $travelPackage->description !!}
             </div>
@@ -89,6 +89,39 @@
         .swiper-container-3d .swiper-slide-shadow-left,
         .swiper-container-3d .swiper-slide-shadow-right {
         background-image: none;
+      }
+      figure{
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      figure table {
+        --bs-table-bg: transparent;
+        --bs-table-accent-bg: transparent;
+        --bs-table-striped-color: #212529;
+        --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+        --bs-table-active-color: #212529;
+        --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+        --bs-table-hover-color: #212529;
+        --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #212529;
+        vertical-align: top;
+        border-color: #dee2e6;
+      }
+
+      tbody, td, tfoot, th, thead, tr {
+        border-color: inherit;
+        border-style: solid;
+      }
+      table>:not(caption)>*>*{
+        border: 1px solid #dee2e6;
+      }
+      table>:not(caption)>*>* {
+        padding: 0.5rem 0.5rem;
+        background-color: transparent;
+        border-bottom-width: 1px;
+        box-shadow: inset 0 0 0 9999px transparent;
       }
     </style>
 @endpush

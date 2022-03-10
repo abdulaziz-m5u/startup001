@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea name="content" id="content" rows="5" class="d-block w-100 form-control">{{ $post->content }}</textarea>
+                        <textarea name="content" id="description" class="form-control">{{ $post->content }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                 </form>
@@ -53,3 +53,14 @@
 
 </div>
 @endsection
+
+@push('script-alt')
+<script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#description' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+@endpush

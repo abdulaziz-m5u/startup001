@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StoreTravelPackageRequest;
+use App\Models\Category;
 
 class TravelPackageController extends Controller
 {
@@ -21,7 +22,9 @@ class TravelPackageController extends Controller
 
     public function create(): View
     {
-        return view('admin.travel-packages.create');
+        $categories = Category::get();
+
+        return view('admin.travel-packages.create', compact('categories'));
     }
 
     public function store(StoreTravelPackageRequest $request): RedirectResponse
@@ -34,7 +37,9 @@ class TravelPackageController extends Controller
 
     public function edit(TravelPackage $travelPackage): View
     {
-        return view('admin.travel-packages.edit', compact('travelPackage'));
+        $categories = Category::get();
+
+        return view('admin.travel-packages.edit', compact('travelPackage', 'categories'));
     }
 
     public function update(StoreTravelPackageRequest $request, TravelPackage $travelPackage): RedirectResponse

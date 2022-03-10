@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTravelPackageRequest extends FormRequest
+class StoreCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,7 @@ class StoreTravelPackageRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'location' => 'required',
-            'duration' => 'required',
-            'description' => 'required',
-            'price' => 'required|integer',
-            'category_id' => 'required'
+            'title' => 'required'
         ];
     }
 }

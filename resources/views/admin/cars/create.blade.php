@@ -5,7 +5,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Tambah Paket Travel</h1>
+        <h1 class="h3 mb-0 text-gray-800">Tambah Car</h1>
     </div>
 
     @if($errors->any())
@@ -21,35 +21,23 @@
 <!-- Content Row -->
         <div class="card shadow">
             <div class="card-body">
-                <form action="{{ route('admin.travel-packages.store') }}" method="POST">
+                <form action="{{ route('admin.cars.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
-                        <label for="name">Category Travel</label>
-                        <select name="category_id" class="form-control" >
-                            @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->title }}</option>
-                            @endforeach
-                        </select>
-                    </div>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
                     </div>
                     <div class="form-group">
-                        <label for="location">Location</label>
-                        <input type="text" class="form-control" id="location" name="location" value="{{ old('location') }}" />
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" id="price" name="price" value="{{ old('price') }}" />
                     </div>
                     <div class="form-group">
                         <label for="duration">Duration</label>
                         <input type="text" class="form-control" id="duration" name="duration" value="{{ old('duration') }}" />
                     </div>
                     <div class="form-group">
-                        <label for="description">description</label>
-                        <textarea name="description" id="description" rows="5" class="d-block w-100 form-control">{{ old('description') }}</textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Price</label>
-                        <input type="number" class="form-control" id="price" name="price" value="{{ old('price') }}" />
+                        <label for="image">Image</label>
+                        <input type="file" class="form-control" id="image" name="image" />
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                 </form>
